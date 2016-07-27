@@ -1,0 +1,14 @@
+{
+  "name": "architecture-sass",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juliettegirin/architecture-sass.git"
+  },
+  "author": "",
+  "dependencies": {
+    "normalize.css": "^4.2.0",
+    "sass-mq": "^3.2.9"
+  }
+}

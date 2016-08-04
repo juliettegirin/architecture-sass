@@ -1,6 +1,6 @@
 # abstracts
 
-* variables: colors, typos and overriding of sass-mq map of breakpoints
+* variables: base-font-size, colors, typos and overriding of sass-mq map of breakpoints
 * mixins:
     * font-size: two arguments
         * size: size in px (only numeric)

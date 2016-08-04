@@ -1,0 +1,20 @@
+// -----------------------------------------------------------------------------
+// sass mixins
+// -----------------------------------------------------------------------------
+
+//font-size mixin: default to em, set param to 'rem' otherwise
+@mixin font-size($size, $unit: 'em') {
+    $unit: if($unit == 'em', 1em, 1rem);
+    font-size: ($size / $base-font-size) * $unit;
+}
+
+//line-height: convert px to em
+@mixin line-height($size) {
+    line-height: pe($size);
+}
+
+//size, set width and height, default to 100%
+@mixin size ($width:100%, $height:100%) {
+    width: $width;
+    height: $height;
+}

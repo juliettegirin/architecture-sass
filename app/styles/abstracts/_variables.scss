@@ -2,4 +2,21 @@
 // sass variables
 // -----------------------------------------------------------------------------
 
+$mq-breakpoints: (
+    xsmall: 500px,
+    small:  768px,
+    medium: 992px,
+    large:  1200px,
+    xlarge: 1400px
+);
+
+$susy: (
+    columns: susy-repeat(12),
+    gutters: 0
+);
+
 $base-font-size: 16; //font-size in px
+
+// -------- colors -------------
+$white: #fff;
+$black: #000;

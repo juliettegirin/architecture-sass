@@ -1,3 +1,54 @@
 // -----------------------------------------------------------------------------
 // helpers class - generics
 // -----------------------------------------------------------------------------
+
+.flex-content {
+    display: flex;
+
+    &--vcenter {
+        align-items: center;
+    }
+
+    &--sided {
+        justify-content: space-between;
+    }
+
+    &--center {
+        justify-content: center;
+    }
+
+    &--wrap {
+        flex-wrap: wrap;
+    }
+
+    &--justify-right {
+        justify-content: flex-end;
+    }
+}
+
+.hide-visually {
+    @include size(1px, 1px);
+    position: absolute;
+    margin: -1px;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    border: none;
+    overflow: hidden;
+}
+
+.fix-flex-ie {
+    display: flex;
+    flex-direction: column;
+}
+
+.no-mobile {
+    @include mq($until: small) {
+        display: none;
+    }
+}
+
+/* stylelint-disable */
+.hide {
+    display: none !important;
+}
+/* stylelint-enable */

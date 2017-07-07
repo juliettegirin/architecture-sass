@@ -18,3 +18,55 @@
     width: $width;
     height: $height;
 }
+
+//mixin for position : only coordinates with units are written
+@mixin position ($position: relative, $coordinates: 0 0 0 0) {
+    @if type-of($position) == list {
+        $coordinates: $position;
+        $position: relative;
+    }
+
+    $top: nth($coordinates, 1);
+    $right: nth($coordinates, 2);
+    $bottom: nth($coordinates, 3);
+    $left: nth($coordinates, 4);
+    position: $position;
+
+    @if not(unitless($top)) {
+        top: $top;
+    }
+
+    @if not(unitless($right)) {
+        right: $right;
+    }
+
+    @if not(unitless($bottom)) {
+        bottom: $bottom;
+    }
+
+    @if not(unitless($left)) {
+        left: $left;
+    }
+}
+
+//before/after overlay elements
+@mixin cover() {
+    @include position(absolute, 0px 0px 0px 0px); /* stylelint-disable-line */
+}
+
+// full width elements (outside container)
+@mixin cover-full() {
+    @include position(absolute, 0px -200% 0px -200%); /* stylelint-disable-line */
+}
+
+// background color on before element outside of parent container
+@mixin bg-full-before($color) {
+    position: relative;
+    z-index: 1;
+
+    &:before {
+        @include cover-full();
+        background-color: $color;
+        z-index: -1;
+    }
+}

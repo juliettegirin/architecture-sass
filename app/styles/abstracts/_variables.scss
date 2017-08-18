@@ -11,8 +11,9 @@ $mq-breakpoints: (
 );
 
 $susy: (
-    columns: susy-repeat(12),
-    gutters: 0
+    columns: 12,
+    gutters: 1/4,
+    gutter-position: after
 );
 
 $base-font-size: 16; //font-size in px

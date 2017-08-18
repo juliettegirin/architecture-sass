@@ -39,19 +39,13 @@ gulp.task('styles', () => {
 });
 
 gulp.task('scss-lint', () => {
-  var stylelint = require('stylelint'),
-      reporter = require('postcss-reporter'),
-      syntax_scss = require('postcss-scss');
-
-  var processors = [
-    stylelint(),
-    reporter({
-      clearMessages: true
-    })
-  ];
-
   return gulp.src(['app/styles/**/*.scss', '!app/styles/abstracts/_helpers.scss', '!app/styles/layout/_form.scss',  '!app/styles/abstract/_mixins.scss'])
-    .pipe($.postcss(processors, {syntax: syntax_scss}));
+    .pipe($.stylelint({
+      failAfterError: false,
+      reporters: [
+        { formatter: 'string', console: true}
+      ]
+    }));
 });
 
 //config for svg sprite
